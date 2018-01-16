@@ -47,12 +47,28 @@ def grab_students():
     myConnection.close()
 
     # How many students pulled from DB
-    print "Pulled %s students from database" % (len(students))
+    #print "Pulled %s students from database" % (len(students))
+
+def active():
+
+    r = redis.Redis(
+        host='messagestore.3dxgn6.0001.use1.cache.amazonaws.com',
+        port='6379')
+    global active_teachers, active_students
+    active_teachers = r.keys('activeTchr*')
+    active_students = r.keys('activeStd*')
 
 grab_students()
 number=len(students)
 region='us-east-1'
 
-conn_cw=boto.ec2.cloudwatch.connect_to_region(region,aws_access_key_id=credentials["AWS_ID"],aws_secret_access_key=credentials["AWS_SECRET"])		
+active()
+active_teacher_count = len(active_teachers)
+#print active_teacher_count
+active_student_count = len(active_students)
+#print active_student_count
 
+conn_cw=boto.ec2.cloudwatch.connect_to_region(region,aws_access_key_id=credentials["AWS_ID"],aws_secret_access_key=credentials["AWS_SECRET"])
 conn_cw.put_metric_data(namespace='gmmops',name='logins',value=number)
+conn_cw.put_metric_data(namespace='gmmops',name='active_teachers',value=active_teacher_count)
+conn_cw.put_metric_data(namespace='gmmops',name='active_students',value=active_student_count)
