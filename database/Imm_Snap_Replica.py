@@ -1,12 +1,10 @@
 #making a snap shot of the replica DB in prod, spinning up a DB in prod, getting a dump from the new DB, uploading the dump to AWS, finally removing the snap shot, DB, and dump.
-import os
-import sys
+import os, sys, subprocess, time, datetime
 import boto3
-import time
-import datetime
 import DBreplace
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.sys.path.insert(0,parentdir)
 import awsinfo
-import subprocess
 
 a=awsinfo
 acc=a.AccountSwitch
