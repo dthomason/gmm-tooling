@@ -1,0 +1,42 @@
+
+login comes back
+user, guid, scid, first restore id which is "w"
+istest = false
+
+//GET for question
+servletrestore
+id:
+ss:
+user:
+isTest: false
+guid:
+sicId:
+
+submit
+id:
+ageId: 0
+attempt: skip
+md5: from servlet restore response
+a: skip
+s: skip
+ss: from login response
+user: from SQL
+guid: from login response
+correct: true or false
+
+
+response pull md5
+
+
+c4s-1 and 2
+line 34
+add preproduction in standalone.xml
+
+
+id:10580929
+a:1510259801234
+ss:3
+user:yyy
+isTest:false
+guid:2ac2a925-dec3-4ffd-81d2-810a3077c2be
+sicId:10580919
