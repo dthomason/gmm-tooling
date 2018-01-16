@@ -1,7 +1,7 @@
 import requests, json
 from locust import HttpLocust, TaskSet, task
 
-base_url = 'http://preproduction.getmoremath.com/'
+base_url = 'http://staging.getmoremath.com/'
 headers = {'content-type': "application/x-www-form-urlencoded"}
 
 class UserBehavior(TaskSet):
