@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 auth.py
 _RDump.sh
+=======
+auth.py
+*/*.pyc
+*.pyc
+>>>>>>> 948b76982c2073ac642bf75d6fb608f3939468f7

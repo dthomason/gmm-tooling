@@ -1,6 +1,9 @@
 import requests, json, time, psycopg2, random, datetime, threading, urllib
 #from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from locust import HttpLocust, TaskSet, task
+import os
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.sys.path.insert(0,parentdir)
 from auth import credentials
 
 #studs= [('LS111193','StepFifth60&')]

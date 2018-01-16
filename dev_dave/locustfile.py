@@ -1,7 +1,10 @@
 import requests, json, time, psycopg2, random, datetime, threading
 from multiprocessing import Process
-from auth import credentials
 from locust import HttpLocust, TaskSet, task
+import os
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.sys.path.insert(0,parentdir)
+from auth import credentials
 
 base_url = 'http://localhost:8080/'
 headers = {'content-type': "application/x-www-form-urlencoded"}

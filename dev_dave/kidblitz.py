@@ -1,6 +1,9 @@
 import requests, json, time, psycopg2, random, datetime, threading
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from multiprocessing import Process
+import os
+parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.sys.path.insert(0,parentdir)
 from auth import credentials
 
 
