@@ -1,1 +1,1 @@
-sudo rm -f /home/ec2-user/_dbrep/dbplace/BigMath.fcdump
+sudo rm -f /home/ec2-user/BigMath.fcdump
