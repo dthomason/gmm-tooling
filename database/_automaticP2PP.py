@@ -74,5 +74,5 @@ print("dump")
 #uploading the fcdump to the appropriate AWS S3 bucket
 subprocess.call("sudo python3.6 /home/ec2-user/database/db_backup.py", shell=True)  
 #removing the fcdump file from brains
-os.system ("sudo rm -f /home/ec2-user/BigMath.fcdum 
+os.system ("sudo rm -f /home/ec2-user/BigMath.fcdump) 
 print("remove")
