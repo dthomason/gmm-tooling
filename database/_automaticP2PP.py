@@ -72,7 +72,7 @@ time.sleep(30)
 os.system("sudo PGPASSWORD=%s pg_dump --host gmm-staging-db.ckhau7urrr2b.us-east-1.rds.amazonaws.com --port 5432 -U %s -f /home/ec2-user/BigMath.fcdump BigMath -Fc" % (dbPW, dbU))
 print("dump")
 #uploading the fcdump to the appropriate AWS S3 bucket
-subprocess.call("sudo python3.6 /home/ec2-user/_dbrep/dbplace/db_backup.py", shell=True)  
+subprocess.call("sudo python3.6 /home/ec2-user/database/db_backup.py", shell=True)  
 #removing the fcdump file from brains
-os.system ("sudo PGPASSWORD=%s pg_dump --host prod-static-i.cblcix4wsn1v.us-east-1.rds.amazonaws.com --port 5432 -U %s -f home/ec2-user/BigMath.fcdump BigMath -Fc" % (dbPW, dbU)) 
+os.system ("sudo rm -f /home/ec2-user/BigMath.fcdum 
 print("remove")
